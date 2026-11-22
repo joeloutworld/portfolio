@@ -1,0 +1,8 @@
+# working files and drafts kept local
+.taste-skill/
+shots/
+github/
+.claude/
+# cv.html carries the phone number; the site serves the PDF without it
+cv.html
+inspiration-report.md

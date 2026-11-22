@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" data-type="software" data-radius="sharp" data-ground="sage" data-buttons="solid">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI SMS and voice lead agent: case study · Joel Cimanes</title>
+<meta name="description" content="Kylie answers leads by SMS and voice, books hot ones onto a loan officer&#x27;s calendar, and follows up with the ones that went quiet, inside strict texting rules.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="An SMS and voice lead agent that books calls and stays quiet when it should">
+<meta property="og:description" content="Kylie answers leads by SMS and voice, books hot ones onto a loan officer&#x27;s calendar, and follows up with the ones that went quiet, inside strict texting rules.">
+<meta property="og:image" content="../share.jpg">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#161c1a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/system.css">
+<link rel="stylesheet" href="../assets/motion/motion.css">
+<style>
+:root {
+  --p-bg: #161c1a; --p-surface: #1f2725; --p-ink: #e3e2da; --p-muted: #8e948d;
+  --p-accent: #9fc7b8; --p-accent-ink: #161c1a; --p-action: #9fc7b8; --p-action-ink: #161c1a;
+  --p-inv-bg: #e3e2da; --p-inv-surface: #d3d2cb; --p-inv-ink: #161c1a; --p-inv-muted: #555a55;
+  --p-inv-accent: #161c1a; --p-inv-accent-ink: #e3e2da; --p-inv-action: #161c1a; --p-inv-action-ink: #e3e2da;
+  --font-display: "Instrument Sans", system-ui, sans-serif;
+  --font-text: "Instrument Sans", system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --display-weight: 500;
+  --display-tracking: -0.028em;
+  --display-tracking-xl: -0.036em;
+  --display-stretch: 96%;
+  --ly-scale: 1.04;
+}
+</style>
+<link rel="stylesheet" href="../assets/site/case.css">
+<script src="../assets/site/bg.js" defer></script>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#top">Skip to content</a>
+    <a class="nav__logo" href="../index.html"><span class="mark mark--initial" aria-hidden="true">J</span>Joel Cimanes</a>
+    <nav class="nav__links" aria-label="Main">
+      <div class="nav__item"><a class="nav__link" href="../index.html#services">Work</a></div>
+      <div class="nav__item"><a class="nav__link" href="../index.html#workflows">Automation</a></div>
+      <div class="nav__item"><a class="nav__link" href="../index.html#experience">Experience</a></div>
+    </nav>
+    <div class="nav__actions"><a class="btn btn--primary" href="mailto:cimanesj0@gmail.com">Email Joel</a></div>
+  </div>
+</header>
+<main id="top">
+  <article class="case wrap" aria-labelledby="case-h">
+    <a class="case__back" href="../index.html#services">&larr; All work</a>
+    <p class="case__kicker">Complete Lending · 2025 to now</p>
+    <h1 id="case-h">An SMS and voice lead agent that books calls and stays quiet when it should</h1>
+    <p class="case__lead">Kylie answers leads by SMS and voice, books hot ones onto a loan officer&#x27;s calendar, and follows up with the ones that went quiet, inside strict texting rules.</p>
+    <div class="case__visual"><a class="case__fig case__fig--wf" href="../assets/workflows/hot-lead.jpg" target="_blank" rel="noopener"><img src="../assets/workflows/hot-lead.jpg" alt="The 41-node hot lead and appointment booker in the n8n editor" width="1690" height="215" loading="lazy"></a></div>
+    <div class="case__grid">
+      <aside class="case__meta">
+        <dl><dt>Client</dt><dd>Complete Lending (Chief Denney)</dd><dt>Role</dt><dd>Automation and AI agent developer</dd><dt>When</dt><dd>2025 to now</dd><dt>Stack</dt><dd>n8n, OpenAI, ElevenLabs voice, GoHighLevel, PostgreSQL, Twilio</dd></dl>
+        <a class="btn btn--primary" href="mailto:cimanesj0@gmail.com?subject=AI SMS and voice lead agent">Ask me about it</a>
+        <a class="btn btn--secondary" href="../assets/joel-cimanes-cv.pdf" download>Download CV</a>
+      </aside>
+      <div class="case__body">
+        <h2>The problem</h2>
+        <p>Leads reply at any hour and go cold if nobody answers. Texting them also comes with hard rules: calling hours, daily caps and opt-outs, where one mistake is costly.</p>
+        <h2>What I built</h2>
+        <ul><li><b>Kylie</b>, the reply agent: an AI agent with conversation memory and playbook documents, which stays silent when a lead is tagged to stop</li><li><b>A 41-node hot lead booker</b>: two webhook entry points, an OpenAI chain that scores intent and reads a date and time out of free-text SMS, CRM stage moves, and booking on the assigned officer's calendar</li><li><b>A lead classifier</b> that places each lead on a pipeline stage with a fixed schema and skips low-confidence answers</li><li><b>A follow-up scheduler</b> that runs hourly and sends the next touch only when a stage's cadence says it is due</li></ul>
+        <h2>Key decisions</h2>
+        <ul><li><b>Safe by default.</b> Call-hour gates, daily and per-run caps, and dry-run on by default; customer-facing automation ships switched off.</li><li><b>Memory in Postgres</b>, replacing in-memory buffers that were lost on restart.</li><li><b>A race fixed.</b> Two systems wrote the same CRM opportunity; stage guards and a deferred-execution step stopped them overwriting each other.</li><li><b>Workflows as code.</b> 200+ workflows are generated from JavaScript build scripts with their own unit tests and validators, so a change is a reviewed diff.</li></ul>
+        <h2>Results</h2>
+        <ul class="case__nums"><li><b>200+</b><span>workflows in production</span></li><li><b>41</b><span>nodes in the booker</span></li><li><b>Dry-run</b><span>on by default for every send</span></li></ul>
+        
+        <a class="case__fig case__fig--wf" href="../assets/workflows/new-lead.jpg" target="_blank" rel="noopener"><img src="../assets/workflows/new-lead.jpg" alt="The new lead agent: webhook, stop-tag check, AI agent with memory and Google Docs tools, status classifier" width="1670" height="450" loading="lazy"></a><a class="case__fig case__fig--wf" href="../assets/workflows/classifier.jpg" target="_blank" rel="noopener"><img src="../assets/workflows/classifier.jpg" alt="The lead classifier: transcript, OpenAI classifier with a schema, opportunity update" width="1290" height="295" loading="lazy"></a><a class="case__fig case__fig--wf" href="../assets/workflows/follow-up.jpg" target="_blank" rel="noopener"><img src="../assets/workflows/follow-up.jpg" alt="The follow-up scheduler: hourly loop over open opportunities with a throttle gate" width="1640" height="345" loading="lazy"></a>
+      </div>
+    </div>
+    <nav class="case__next" aria-label="More case studies">
+      <a href="loan-system.html"><span>Previous</span>Loan origination system</a>
+      <a href="integrations.html"><span>Next</span>CRM sync and property events</a>
+    </nav>
+  </article>
+</main>
+<footer class="case__foot wrap">
+  <span>&copy; 2026 Joel Cimanes</span>
+  <span><a href="mailto:cimanesj0@gmail.com">Email</a> · <a href="https://calendar.google.com/calendar/u/0?cid=OWE0MTEyY2M2ZDdlNjFjYWRmODZhNTE4NzhkZmVlN2Y2ZmM0MTE4YTU2Nzg4ZTE0YjUwYzliZmQ1YWMzODJlZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t" target="_blank" rel="noopener">Book a call</a> · <a href="https://github.com/joeloutworld" target="_blank" rel="noopener">GitHub</a> · <a href="../assets/joel-cimanes-cv.pdf" download>CV</a> · <a href="../index.html">Home</a></span>
+</footer>
+</body>
+</html>

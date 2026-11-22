@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" data-type="software" data-radius="sharp" data-ground="sage" data-buttons="solid">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Borrower document intake: case study · Joel Cimanes</title>
+<meta name="description" content="A borrower uploads from a link; one run stores the file in the right place, updates the CRM, confirms by SMS and email, and posts to the team&#x27;s chat.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Borrower documents that file themselves and tell the team">
+<meta property="og:description" content="A borrower uploads from a link; one run stores the file in the right place, updates the CRM, confirms by SMS and email, and posts to the team&#x27;s chat.">
+<meta property="og:image" content="../share.jpg">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#161c1a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/system.css">
+<link rel="stylesheet" href="../assets/motion/motion.css">
+<style>
+:root {
+  --p-bg: #161c1a; --p-surface: #1f2725; --p-ink: #e3e2da; --p-muted: #8e948d;
+  --p-accent: #9fc7b8; --p-accent-ink: #161c1a; --p-action: #9fc7b8; --p-action-ink: #161c1a;
+  --p-inv-bg: #e3e2da; --p-inv-surface: #d3d2cb; --p-inv-ink: #161c1a; --p-inv-muted: #555a55;
+  --p-inv-accent: #161c1a; --p-inv-accent-ink: #e3e2da; --p-inv-action: #161c1a; --p-inv-action-ink: #e3e2da;
+  --font-display: "Instrument Sans", system-ui, sans-serif;
+  --font-text: "Instrument Sans", system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --display-weight: 500;
+  --display-tracking: -0.028em;
+  --display-tracking-xl: -0.036em;
+  --display-stretch: 96%;
+  --ly-scale: 1.04;
+}
+</style>
+<link rel="stylesheet" href="../assets/site/case.css">
+<script src="../assets/site/bg.js" defer></script>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#top">Skip to content</a>
+    <a class="nav__logo" href="../index.html"><span class="mark mark--initial" aria-hidden="true">J</span>Joel Cimanes</a>
+    <nav class="nav__links" aria-label="Main">
+      <div class="nav__item"><a class="nav__link" href="../index.html#services">Work</a></div>
+      <div class="nav__item"><a class="nav__link" href="../index.html#workflows">Automation</a></div>
+      <div class="nav__item"><a class="nav__link" href="../index.html#experience">Experience</a></div>
+    </nav>
+    <div class="nav__actions"><a class="btn btn--primary" href="mailto:cimanesj0@gmail.com">Email Joel</a></div>
+  </div>
+</header>
+<main id="top">
+  <article class="case wrap" aria-labelledby="case-h">
+    <a class="case__back" href="../index.html#services">&larr; All work</a>
+    <p class="case__kicker">Complete Lending · 2025 to now</p>
+    <h1 id="case-h">Borrower documents that file themselves and tell the team</h1>
+    <p class="case__lead">A borrower uploads from a link; one run stores the file in the right place, updates the CRM, confirms by SMS and email, and posts to the team&#x27;s chat.</p>
+    <div class="case__visual"><ol class="flow" aria-label="How data moves"><li>Borrower upload page</li><li>29-node n8n intake</li><li>Google Drive</li><li>GoHighLevel</li><li>SMS and email</li><li>Google Chat</li></ol></div>
+    <div class="case__grid">
+      <aside class="case__meta">
+        <dl><dt>Client</dt><dd>Complete Lending (Chief Denney)</dd><dt>Role</dt><dd>Design and build</dd><dt>When</dt><dd>2025 to now</dd><dt>Stack</dt><dd>n8n, Google Drive, GoHighLevel, Twilio SMS, SMTP, Google Chat</dd></dl>
+        <a class="btn btn--primary" href="mailto:cimanesj0@gmail.com?subject=Borrower document intake">Ask me about it</a>
+        <a class="btn btn--secondary" href="../assets/joel-cimanes-cv.pdf" download>Download CV</a>
+      </aside>
+      <div class="case__body">
+        <h2>The problem</h2>
+        <p>Collecting borrower documents meant chasing files and filing them by hand, and the borrower never knew whether an upload had worked.</p>
+        <h2>What I built</h2>
+        <ul><li><b>A 29-node intake pipeline</b> across Google Drive, GoHighLevel, Twilio SMS, SMTP and Google Chat</li><li><b>A custom upload page</b> with a synchronous webhook response contract, so the borrower sees a real success or failure</li><li><b>Hardened borrower apps</b>: a URL that worked as a password (<code>?contact_id=</code>) was replaced with signed links plus a one-time code, and scripts and fonts were self-hosted behind SRI and security headers</li></ul>
+        <h2>Key decisions</h2>
+        <ul><li><b>Answer the borrower honestly.</b> The upload page waits for the pipeline's response instead of always saying "done".</li><li><b>No guessable links.</b> Signed, expiring links and a one-time code replaced IDs in the URL.</li></ul>
+        <h2>Results</h2>
+        <ul class="case__nums"><li><b>29</b><span>nodes in one run</span></li><li><b>5</b><span>systems updated per upload</span></li><li><b>0</b><span>guessable borrower links</span></li></ul>
+        
+        
+      </div>
+    </div>
+    <nav class="case__next" aria-label="More case studies">
+      <a href="integrations.html"><span>Previous</span>CRM sync and property events</a>
+      <a href="client-tracker.html"><span>Next</span>Client time-tracking portal</a>
+    </nav>
+  </article>
+</main>
+<footer class="case__foot wrap">
+  <span>&copy; 2026 Joel Cimanes</span>
+  <span><a href="mailto:cimanesj0@gmail.com">Email</a> · <a href="https://calendar.google.com/calendar/u/0?cid=OWE0MTEyY2M2ZDdlNjFjYWRmODZhNTE4NzhkZmVlN2Y2ZmM0MTE4YTU2Nzg4ZTE0YjUwYzliZmQ1YWMzODJlZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t" target="_blank" rel="noopener">Book a call</a> · <a href="https://github.com/joeloutworld" target="_blank" rel="noopener">GitHub</a> · <a href="../assets/joel-cimanes-cv.pdf" download>CV</a> · <a href="../index.html">Home</a></span>
+</footer>
+</body>
+</html>

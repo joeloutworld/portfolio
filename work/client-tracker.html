@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" data-type="software" data-radius="sharp" data-ground="sage" data-buttons="solid">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Client time-tracking portal: case study · Joel Cimanes</title>
+<meta name="description" content="A multi-tenant portal built for Sonia Associates: the owner sees time logged across clients, approves it, invoices it and exports reports.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="One portal where an owner sees every client&#x27;s hours and bills them">
+<meta property="og:description" content="A multi-tenant portal built for Sonia Associates: the owner sees time logged across clients, approves it, invoices it and exports reports.">
+<meta property="og:image" content="../share.jpg">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#161c1a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/system.css">
+<link rel="stylesheet" href="../assets/motion/motion.css">
+<style>
+:root {
+  --p-bg: #161c1a; --p-surface: #1f2725; --p-ink: #e3e2da; --p-muted: #8e948d;
+  --p-accent: #9fc7b8; --p-accent-ink: #161c1a; --p-action: #9fc7b8; --p-action-ink: #161c1a;
+  --p-inv-bg: #e3e2da; --p-inv-surface: #d3d2cb; --p-inv-ink: #161c1a; --p-inv-muted: #555a55;
+  --p-inv-accent: #161c1a; --p-inv-accent-ink: #e3e2da; --p-inv-action: #161c1a; --p-inv-action-ink: #e3e2da;
+  --font-display: "Instrument Sans", system-ui, sans-serif;
+  --font-text: "Instrument Sans", system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --display-weight: 500;
+  --display-tracking: -0.028em;
+  --display-tracking-xl: -0.036em;
+  --display-stretch: 96%;
+  --ly-scale: 1.04;
+}
+</style>
+<link rel="stylesheet" href="../assets/site/case.css">
+<script src="../assets/site/bg.js" defer></script>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#top">Skip to content</a>
+    <a class="nav__logo" href="../index.html"><span class="mark mark--initial" aria-hidden="true">J</span>Joel Cimanes</a>
+    <nav class="nav__links" aria-label="Main">
+      <div class="nav__item"><a class="nav__link" href="../index.html#services">Work</a></div>
+      <div class="nav__item"><a class="nav__link" href="../index.html#workflows">Automation</a></div>
+      <div class="nav__item"><a class="nav__link" href="../index.html#experience">Experience</a></div>
+    </nav>
+    <div class="nav__actions"><a class="btn btn--primary" href="mailto:cimanesj0@gmail.com">Email Joel</a></div>
+  </div>
+</header>
+<main id="top">
+  <article class="case wrap" aria-labelledby="case-h">
+    <a class="case__back" href="../index.html#services">&larr; All work</a>
+    <p class="case__kicker">Sonia Associates · 2026</p>
+    <h1 id="case-h">One portal where an owner sees every client&#x27;s hours and bills them</h1>
+    <p class="case__lead">A multi-tenant portal built for Sonia Associates: the owner sees time logged across clients, approves it, invoices it and exports reports.</p>
+    <div class="case__visual"><div class="case__fig"><video data-loop src="../assets/apps/tracker.mp4" poster="../assets/apps/tracker-poster.jpg" muted loop playsinline preload="none" width="1440" height="742" aria-label="Screen recording of the client tracker: overview, projects and tasks. Client and project names are blurred."></video></div></div>
+    <div class="case__grid">
+      <aside class="case__meta">
+        <dl><dt>Client</dt><dd>Sonia Associates (Sonia Amen)</dd><dt>Role</dt><dd>Freelance full-stack developer</dd><dt>When</dt><dd>2026</dd><dt>Stack</dt><dd>Next.js, TypeScript, Playwright, ADRs</dd></dl>
+        <a class="btn btn--primary" href="mailto:cimanesj0@gmail.com?subject=Client time-tracking portal">Ask me about it</a>
+        <a class="btn btn--secondary" href="../assets/joel-cimanes-cv.pdf" download>Download CV</a>
+      </aside>
+      <div class="case__body">
+        <h2>The problem</h2>
+        <p>The owner needed one place to see time across every client, approve it and bill it, while each client sees only its own work.</p>
+        <h2>What I built</h2>
+        <ul><li><b>Multi-tenant owner and client portal</b> with tenant isolation, so a client only ever sees its own data</li><li><b>Time tracking with approvals</b>, and invites by magic link</li><li><b>CSV and PDF reports</b> for invoicing</li></ul>
+        <h2>Key decisions</h2>
+        <ul><li><b>Decisions written down.</b> Architecture choices are recorded as ADRs.</li><li><b>Tested in a real browser.</b> Playwright end-to-end tests cover the main flows.</li></ul>
+        <h2>Results</h2>
+        <ul class="case__nums"><li><b>1</b><span>view across every client</span></li><li><b>2</b><span>export formats: CSV and PDF</span></li></ul>
+        
+        
+      </div>
+    </div>
+    <nav class="case__next" aria-label="More case studies">
+      <a href="document-intake.html"><span>Previous</span>Borrower document intake</a>
+      <a href="loan-system.html"><span>Next</span>Loan origination system</a>
+    </nav>
+  </article>
+</main>
+<footer class="case__foot wrap">
+  <span>&copy; 2026 Joel Cimanes</span>
+  <span><a href="mailto:cimanesj0@gmail.com">Email</a> · <a href="https://calendar.google.com/calendar/u/0?cid=OWE0MTEyY2M2ZDdlNjFjYWRmODZhNTE4NzhkZmVlN2Y2ZmM0MTE4YTU2Nzg4ZTE0YjUwYzliZmQ1YWMzODJlZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t" target="_blank" rel="noopener">Book a call</a> · <a href="https://github.com/joeloutworld" target="_blank" rel="noopener">GitHub</a> · <a href="../assets/joel-cimanes-cv.pdf" download>CV</a> · <a href="../index.html">Home</a></span>
+</footer>
+</body>
+</html>
